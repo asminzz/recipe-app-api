@@ -7,10 +7,9 @@ services:
 
 before_script:
   - pip install docker-compose
-
-before_install:
-  - sudo apt-get update
-  - sudo apt-get install python3
+  - docker-compose run app sh -c "sudo apt-get update"
+  - docker-compose run app sh -c "sudo apt-get install python3.6"
+  - docker-compose run app sh -c "python --version"
 
 script:
   - docker-compose run app sh -c "python manage.py test && flake8"
