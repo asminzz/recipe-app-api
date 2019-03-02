@@ -5,7 +5,10 @@ version:
 services:
   - docker
 
-before_script: pip install docker-compose
+before_script:
+  - pip install docker-compose
+  - pip install python --upgrade
+
 
 script:
   - docker-compose run app sh -c "python manage.py test && flake8"
