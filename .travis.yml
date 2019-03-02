@@ -7,9 +7,8 @@ services:
 
 before_script:
   - pip install docker-compose
-  - pip install python --upgrade
-
 
 script:
+  - docker-compose run app sh -c "pip install python --upgrade"
   - docker-compose run app sh -c "python manage.py test && flake8"
 
