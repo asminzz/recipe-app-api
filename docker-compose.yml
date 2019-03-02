@@ -11,9 +11,3 @@ services:
     command: >
       sh -c "python manage.py runserver 0.0.0.0:8000"
 
-  addons:
-    apt:
-      sources:
-        - deadsnakes # source required so it finds the package definition below
-      packages:
-        - python3.6
